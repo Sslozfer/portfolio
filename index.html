@@ -4,424 +4,501 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="title">Portfolio</title>
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  <style>
-  html {
-      scroll-behavior: smooth;
-       }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
+
 <body>
   <!-- Fondo animado -->
   <div id="particles-js"></div>
 
-  <!-- Portada -->
-<section id="portada" class="portada">
-  <div class="portada-contenido">
-    <h1 data-i18n="greeting">¡Hola, soy Santiago Lozano!</h1>
-    <p data-i18n="welcome">Bienvenido a mi portafolio</p>
-  </div>
-</section>
+  <!-- HEADER: Navegación -->
+  <header class="navbar">
+    <ul class="nav-links">
+      <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
+      <li><a href="#habilidades" data-i18n="nav_skills">Habilidades</a></li>
+      <li><a href="#proyectos" data-i18n="nav_projects">Proyectos</a></li>
+      <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+      
+      <!-- Selector de idioma -->
+      <li class="idioma-selector">
+        <button id="botonIdioma" data-i18n="language_button">🌐 Idioma</button>
+        <ul id="listaIdiomas" class="oculto">
+          <li data-lang="es">Español</li>
+          <li data-lang="en">English</li>
+          <li data-lang="zh">中文</li>
+        </ul>
+      </li>
+      
+      <!-- Toggle modo oscuro -->
+      <li>
+        <button id="toggleModo" aria-label="Toggle dark mode">
+          <i id="iconModo" class="fas fa-moon"></i>
+        </button>
+      </li>
+    </ul>
+  </header>
 
-  <!-- Navbar -->
-<header class="navbar">
-  <ul class="nav-links">
-    <li><a href="#sobre-mi" data-i18n="nav_about">Sobre mí</a></li>
-    <li><a href="#habilidades" data-i18n="nav_skills">Habilidades</a></li>
-    <li><a href="#proyectos" data-i18n="nav_projects">Proyectos</a></li>
-    <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
-    <li class="idioma-selector">
-      <button id="botonIdioma" data-i18n="language_button">🌐 Idioma</button>
-      <ul id="listaIdiomas" class="oculto">
-        <li data-lang="es">Español</li>
-        <li data-lang="en">English</li>
-        <li data-lang="zh">中文</li>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Sección: Portada -->
+    <section id="portada" class="portada">
+      <div class="portada-contenido">
+        <h1 data-i18n="greeting">¡Hola, soy Santiago Lozano!</h1>
+        <p data-i18n="welcome">Bienvenido a mi portafolio</p>
+      </div>
+    </section>
+
+    <!-- Sección: Sobre mí -->
+    <section id="sobre-mi" class="seccion">
+      <h2 data-i18n="about_title">Sobre mí</h2>
+      <p data-i18n="about_desc">
+        ¡Hola! Soy un desarrollador apasionado por la tecnología y la creación de soluciones innovadoras. 
+        Me encanta aprender y compartir lo que sé.
+      </p>
+      <a href="cv.pdf" download class="boton-descarga" data-i18n="download_cv">Descargar CV</a>
+    </section>
+
+    <!-- Sección: Habilidades técnicas -->
+    <section id="habilidades" class="habilidades seccion">
+      <h2 data-i18n="skills_title">Habilidades Técnicas</h2>
+      <div class="habilidades-grid">
+        <div class="habilidad">
+          <h3>Python</h3>
+          <i class="fab fa-python" style="color: #306998;"></i>
+          <p data-i18n="python_hours">+250 horas</p>
+        </div>
+        <div class="habilidad">
+          <h3>C++</h3>
+          <i class="fas fa-code" style="color: #00599C;"></i>
+          <p data-i18n="skills_cpp_hours">+80 horas</p>
+        </div>
+        <div class="habilidad">
+          <h3>C#</h3>
+          <i class="fas fa-gamepad" style="color: #512BD4;"></i>
+          <p data-i18n="skills_csharp_hours">+110 horas</p>
+        </div>
+        <div class="habilidad">
+          <h3>HTML</h3>
+          <i class="fab fa-html5" style="color: #e34c26;"></i>
+          <p data-i18n="skills_html_hours">+15 horas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Proyectos -->
+    <section id="proyectos" class="seccion">
+      <h2 data-i18n="projects_title">Proyectos</h2>
+      <div class="proyectos-grid">
+        <!-- Proyecto 1: Mapa de Terremotos -->
+        <div class="proyecto">
+          <h3 data-i18n="project_earthquake_map">Mapa de Terremotos</h3>
+          <img src="https://raw.githubusercontent.com/Sslozfer/Trabajo-1/ramita/parte%201/preview.jpg" 
+               alt="Mapa de Terremotos">
+          <p data-i18n="project_earthquake_desc">
+            Visualización interactiva de datos sísmicos usando mapas.
+          </p>
+          <a href="https://github.com/Sslozfer/Trabajo-1/tree/ramita/parte%201" 
+             target="_blank" 
+             data-i18n="view_github">Ver en GitHub</a>
+        </div>
+
+        <!-- Proyecto 2: Estadísticas de GitHub -->
+        <div class="proyecto">
+          <h3 data-i18n="project_github_stats">Estadísticas de GitHub</h3>
+          <img src="https://raw.githubusercontent.com/Sslozfer/Trabajo-1/ramita/parte%202/preview.png" 
+               alt="Gráficos de GitHub">
+          <p data-i18n="project_github_desc">
+            Página que muestra gráficos sobre usuarios, repositorios y licencias.
+          </p>
+          <a href="https://github.com/Sslozfer/Trabajo-1/tree/ramita/parte%202" 
+             target="_blank" 
+             data-i18n="view_github">Ver en GitHub</a>
+        </div>
+
+        <!-- Proyecto 3: PvZ en Python -->
+        <div class="proyecto">
+          <h3 data-i18n="project_pvz">Plantas contra Zombies en Python</h3>
+          <img src="https://raw.githubusercontent.com/Sslozfer/pvz-python/main/Imagenes/preview.jpg" 
+               alt="Plantas contra Zombies en Python">
+          <p data-i18n="project_pvz_desc">
+            Un proyecto inspirado en el famoso juego PvZ, desarrollado desde cero en Python.
+          </p>
+          <a href="https://github.com/Sslozfer/pvz-python" 
+             target="_blank" 
+             data-i18n="view_github">Ver en GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Contacto -->
+    <section id="contacto" class="seccion">
+      <h2 data-i18n="contact_title">Contacto</h2>
+      
+      <!-- Formulario de contacto -->
+      <form action="https://formspree.io/f/xgvyowwo" method="POST">
+        <div class="form-group">
+          <label for="email" data-i18n="contact_email_label">Tu correo:</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message" data-i18n="contact_message_label">Mensaje:</label>
+          <textarea name="message" id="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" data-i18n="contact_send">Enviar</button>
+      </form>
+      
+      <!-- Redes sociales -->
+      <ul class="redes">
+        <li><a href="https://www.linkedin.com/in/ss-lozfer-aa12a9307/" data-i18n="contact_linkedin">LinkedIn</a></li>
+        <li><a href="https://github.com/Sslozfer" data-i18n="contact_github">GitHub</a></li>
+        <li><a href="mailto:Sslozfer@gmail.com" data-i18n="contact_email">Email</a></li>
       </ul>
-    </li>
-    <li><button id="toggleModo" aria-label="Toggle dark mode"><i id="iconModo" class="fas fa-moon"></i></button></li>
-  </ul>
-</header>
-    
+    </section>
+  </main>
 
- <!-- Sección Sobre mí -->
-<section id="sobre-mi" class="seccion">
-  <h1 data-i18n="about_title">Sobre mí</h1>
-  <p data-i18n="about_desc">¡Hola! Soy un desarrollador apasionado por la tecnología y la creación de soluciones innovadoras. Me encanta aprender y compartir lo que sé.</p>
-  <a href="cv.pdf" download class="boton-descarga" data-i18n="download_cv">Descargar CV</a>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <p data-i18n="footer_text">&copy; 2025 Mi Portfolio</p>
+  </footer>
 
-<!-- Sección de habilidades técnicas -->
-<section id="habilidades" class="habilidades seccion">
-  <h2 data-i18n="skills_title">Habilidades Técnicas</h2>
-  <div class="habilidades-grid">
-    <div class="habilidad">
-      <h3>Python</h3>
-      <i class="fab fa-python" style="color: #306998;"></i>
-      <p data-i18n="python_hours">+250 horas</p>
-    </div>
-    <div class="habilidad">
-      <h3>C++</h3>
-      <i class="fas fa-code" style="color: #00599C;"></i>
-      <p data-i18n="skills_cpp_hours">+80 horas</p>
-    </div>
-    <div class="habilidad">
-      <h3>C#</h3>
-      <i class="fas fa-gamepad" style="color: #512BD4;"></i>
-      <p data-i18n="skills_csharp_hours">+110 horas</p>
-    </div>
-    <div class="habilidad">
-      <h3>HTML</h3>
-      <i class="fab fa-html5" style="color: #e34c26;"></i>
-      <p data-i18n="skills_html_hours">+15 horas</p>
-    </div>
-  </div>
-</section>
-
-   <!-- Sección Proyectos -->
-<section id="proyectos" class="seccion">
-  <h2 data-i18n="projects_title">Proyectos</h2>
-  <div class="proyectos-grid">
-    
-    <div class="proyecto">
-      <h3 data-i18n="project_earthquake_map">Mapa de Terremotos</h3>
-      <img src="https://raw.githubusercontent.com/Sslozfer/Trabajo-1/ramita/parte%201/preview.jpg" alt="Mapa de Terremotos">
-      <p data-i18n="project_earthquake_desc">Visualización interactiva de datos sísmicos usando mapas.</p>
-      <a href="https://github.com/Sslozfer/Trabajo-1/tree/ramita/parte%201" target="_blank" data-i18n="view_github">Ver en GitHub</a>
-    </div>
-
-    <div class="proyecto">
-      <h3 data-i18n="project_github_stats">Estadísticas de GitHub</h3>
-      <img src="https://raw.githubusercontent.com/Sslozfer/Trabajo-1/ramita/parte%202/preview.png" alt="Gráficos de GitHub">
-      <p data-i18n="project_github_desc">Página que muestra gráficos sobre usuarios, repositorios y licencias.</p>
-      <a href="https://github.com/Sslozfer/Trabajo-1/tree/ramita/parte%202" target="_blank" data-i18n="view_github">Ver en GitHub</a>
-    </div>
-
-    <div class="proyecto">
-      <h3 data-i18n="project_pvz">Plantas contra Zombies en Python</h3>
-      <img src="https://raw.githubusercontent.com/Sslozfer/pvz-python/main/Imagenes/preview.jpg" alt="Plantas contra Zombies en Python">
-      <p data-i18n="project_pvz_desc">Un proyecto inspirado en el famoso juego PvZ, desarrollado desde cero en Python.</p>
-      <a href="https://github.com/Sslozfer/pvz-python" target="_blank" data-i18n="view_github">Ver en GitHub</a>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- Sección Contacto -->
-<section id="contacto" class="seccion">
-  <h2 data-i18n="contact_title">Contacto</h2>
-  <form action="https://formspree.io/f/xgvyowwo" method="POST">
-  <div class="form-group">
-    <label for="email" data-i18n="contact_email_label">Tu correo:</label>
-    <input type="email" name="email" id="email" required>
-  </div>
-  
-  <div class="form-group">
-    <label for="message" data-i18n="contact_message_label">Mensaje:</label>
-    <textarea name="message" id="message" rows="4" required></textarea>
+  <!-- ASISTENTE VIRTUAL -->
+  <!-- Botón para abrir el asistente -->
+  <div class="ai-assistant">
+    <button class="ai-toggle-btn" id="toggle-ai-chat">
+      <i class="fas fa-robot"></i>
+    </button>
   </div>
 
-  <button type="submit" data-i18n="contact_send">Enviar</button>
-</form>
-  <ul class="redes">
-    <li><a href="https://www.linkedin.com/in/ss-lozfer-aa12a9307/" data-i18n="contact_linkedin">LinkedIn</a></li>
-    <li><a href="https://github.com/Sslozfer" data-i18n="contact_github">GitHub</a></li>
-    <li><a href="mailto:Sslozfer@gmail.com" data-i18n="contact_email">Email</a></li>
-  </ul>
-</section>
+  <!-- Ventana de chat del asistente -->
+  <div class="ai-chat-container" id="ai-chat">
+    <div class="ai-chat-header">
+      <h3><i class="fas fa-robot"></i> Asistente Virtual</h3>
+      <button class="ai-close-btn" id="close-ai-chat">&times;</button>
+    </div>
+    <div class="ai-chat-messages" id="ai-messages"></div>
+    <div class="ai-chat-input">
+      <textarea id="ai-input" 
+                class="ai-input-field" 
+                placeholder="Pregúntame sobre Santiago..."></textarea>
+      <button class="ai-send-btn" id="ai-send">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
 
-<!-- Footer -->
-<footer>
-  <p data-i18n="footer_text">&copy; 2025 Mi Portfolio</p>
-</footer>
+  <!-- SCRIPTS -->
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script>
-  // Configuración de partículas
-  const lightParticles = {
-    particles: {
-      number: { value: 60 },
-      color: { value: '#000000' },
-      shape: { type: 'circle' },
-      opacity: { value: 0.3, random: true },
-      size: { value: 8, random: true },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: 'none',
-        out_mode: 'bounce'
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: '#000000',
-        opacity: 0.4,
-        width: 1
-      }
-    },
-    interactivity: {
-      events: {
-        onhover: { enable: true, mode: 'repulse' }
-      }
-    }
-  };
-
-  const darkParticles = JSON.parse(JSON.stringify(lightParticles));
-  darkParticles.particles.color.value = '#ffffff';
-  darkParticles.particles.line_linked.color = '#ffffff';
-
-  function setParticlesMode(isDark) {
-    if (window.pJSDom && pJSDom.length) {
-      window.pJSDom[0].pJS.fn.vendors.destroypJS();
-      window.pJSDom = [];
-    }
-    particlesJS('particles-js', isDark ? darkParticles : lightParticles);
-  }
-
-  // Inicialización
-  let oscuro = false;
-  particlesJS('particles-js', lightParticles);
-
-  // Modo oscuro/claro con icono
-  const toggleBtn = document.getElementById('toggleModo');
-  const iconModo = document.getElementById('iconModo');
-
-  function actualizarIconoModo() {
-    if (oscuro) {
-      iconModo.classList.remove('fa-moon');
-      iconModo.classList.add('fa-sun');
-    } else {
-      iconModo.classList.remove('fa-sun');
-      iconModo.classList.add('fa-moon');
-    }
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('oscuro');
-    oscuro = !oscuro;
-    setParticlesMode(oscuro);
-    actualizarIconoModo();
-
-    // Animación de giro
-    iconModo.classList.add('girando');
-    iconModo.addEventListener('animationend', () => {
-      iconModo.classList.remove('girando');
-    }, { once: true });
-  });
-
-  // Inicializar icono correctamente
-  actualizarIconoModo();
-</script>
+  <!-- Script: Configuración de partículas y modo oscuro -->
   <script>
-        const translations = {
-            es: {
-                title: "Portfolio",
-                greeting: "¡Hola, soy Santiago Lozano!",
-                welcome: "Bienvenido a mi portafolio",
-                nav_about: "Sobre mí",
-                nav_skills: "Habilidades",
-                nav_projects: "Proyectos",
-                nav_contact: "Contacto",
-                language_button: "🌐 Idioma",
-                toggle_mode: "Modo",
-                about_title: "Sobre mí",
-                about_desc: "¡Hola! Soy un desarrollador apasionado por la tecnología y la creación de soluciones innovadoras. Me encanta aprender y compartir lo que sé.",
-                download_cv: "Descargar CV",
-                skills_title: "Habilidades Técnicas",
-                python_hours: "+250 horas",
-                cpp_hours: "+80 horas",
-                csharp_hours: "+110 horas",
-                html_hours: "+15 horas",
-                projects_title: "Proyectos",
-                project_earthquake_map: "Mapa de Terremotos",
-                project_earthquake_desc: "Visualización interactiva de datos sísmicos usando mapas. ",
-                project_github_stats: "Estadísticas de GitHub",
-                project_github_desc: "Página que muestra gráficos sobre usuarios, repositorios y licencias. ",
-                project_pvz: "Plantas contra Zombies en Python",
-                project_pvz_desc: "Un proyecto inspirado en el famoso juego PvZ, desarrollado desde cero en Python. ",
-                view_github: "Ver en GitHub",
-                contact_title: "Contacto",
-                send: "Enviar",
-                linkedin: "LinkedIn",
-                github: "GitHub",
-                email: "Correo",
-                footer_text: "© 2025 Mi Portfolio",
-                contact_email_label: "Tu correo:",
-                contact_message_label: "Mensaje:",
-                contact_send: "Enviar",
-                contact_name_placeholder: "Nombre",
-                contact_email_placeholder: "Email",
-                contact_message_placeholder: "Mensaje"
-            },
+    // ========================================
+    // CONFIGURACIÓN DE PARTÍCULAS
+    // ========================================
+    const lightParticles = {
+      particles: {
+        number: { value: 60 },
+        color: { value: '#000000' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.3, random: true },
+        size: { value: 8, random: true },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          out_mode: 'bounce'
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#000000',
+          opacity: 0.4,
+          width: 1
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'repulse' }
+        }
+      }
+    };
 
-            en: {
-                title: "Portfolio",
-                greeting: "Hi, I'm Santiago Lozano!",
-                welcome: "Welcome to my portfolio",
-                nav_about: "About Me",
-                nav_skills: "Skills",
-                nav_projects: "Projects",
-                nav_contact: "Contact",
-                language_button: "🌐 Language",
-                toggle_mode: "Mode",
-                about_title: "About Me",
-                about_desc: "Hi! I'm a developer passionate about technology and creating innovative solutions. I love to learn and share what I know.",
-                download_cv: "Download CV",
-                skills_title: "Technical Skills",
-                python_hours: "+250 hours",
-                cpp_hours: "+80 hours",
-                csharp_hours: "+110 hours",
-                html_hours: "+15 hours",
-                projects_title: "Projects",
-                project_earthquake_map: "Earthquake Map",
-                project_earthquake_desc: "Interactive visualization of seismic data using maps. ",
-                project_github_stats: "GitHub Statistics",
-                project_github_desc: "Page displaying charts about users, repositories, and licenses. ",
-                project_pvz: "Plants vs Zombies in Python",
-                project_pvz_desc: "A project inspired by the famous PvZ game, developed from scratch in Python. ",
-                view_github: "View on GitHub",
-                contact_title: "Contact",
-                contact_email_label: "Your email:",
-                contact_message_label: "Message:",
-                contact_send: "Send",
-                contact_name_placeholder: "Name",
-                contact_email_placeholder: "Email",
-                contact_message_placeholder: "Message",
-                send: "Send",
-                linkedin: "LinkedIn",
-                github: "GitHub",
-                email: "Email",
-                footer_text: "© 2025 My Portfolio"
-            },
+    const darkParticles = JSON.parse(JSON.stringify(lightParticles));
+    darkParticles.particles.color.value = '#ffffff';
+    darkParticles.particles.line_linked.color = '#ffffff';
 
-            zh: {
-                title: "作品集",
-                greeting: "你好，我是 Santiago Lozano！",
-                welcome: "欢迎来到我的作品集",
-                nav_about: "关于我",
-                nav_skills: "技能",
-                nav_projects: "项目",
-                nav_contact: "联系",
-                language_button: "🌐 语言",
-                toggle_mode: "模式",
-                about_title: "关于我",
-                about_desc: "你好！我是一个热爱技术并致力于创造创新解决方案的开发者。我喜欢学习并分享我的知识。",
-                download_cv: "下载简历",
-                skills_title: "技术技能",
-                python_hours: "+250 小时",
-                cpp_hours: "+80 小时",
-                csharp_hours: "+110 小时",
-                html_hours: "+15 小时",
-                projects_title: "项目",
-                project_earthquake_map: "地震地图",
-                project_earthquake_desc: "使用地图交互式可视化地震数据。",
-                project_github_stats: "GitHub 统计",
-                project_github_desc: "显示用户、仓库和许可证图表的页面。",
-                project_pvz: "Python 版植物大战僵尸",
-                project_pvz_desc: "一个受 PvZ 启发的项目，用 Python 从零开发。",
-                view_github: "查看 GitHub",
-                contact_title: "联系",
-                name_placeholder: "姓名",
-                email_placeholder: "电子邮件",
-                message_placeholder: "留言",
-                send: "发送",
-                linkedin: "领英",
-                github: "GitHub",
-                email: "电子邮件",
-                footer_text: "© 2025 我的作品集",
-                contact_email_label: "你的邮箱:",
-                contact_message_label: "留言:",
-                contact_send: "发送",
-                contact_name_placeholder: "姓名",
-                contact_email_placeholder: "电子邮件",
-                contact_message_placeholder: "留言内容"
-            }
-            };
+    function setParticlesMode(isDark) {
+      if (window.pJSDom && pJSDom.length) {
+        window.pJSDom[0].pJS.fn.vendors.destroypJS();
+        window.pJSDom = [];
+      }
+      particlesJS('particles-js', isDark ? darkParticles : lightParticles);
+    }
 
-        function translatePage(lang) {
-            const elements = document.querySelectorAll("[data-i18n]");
-            elements.forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                if (translations[lang] && translations[lang][key]) {
-                el.textContent = translations[lang][key];
-                }
-            });
+    // ========================================
+    // MODO OSCURO/CLARO
+    // ========================================
+    let oscuro = false;
+    const toggleBtn = document.getElementById('toggleModo');
+    const iconModo = document.getElementById('iconModo');
 
-            const placeholders = document.querySelectorAll("[data-i18n-placeholder]");
-            placeholders.forEach(el => {
-                const key = el.getAttribute("data-i18n-placeholder");
-                if (translations[lang] && translations[lang][key]) {
-                el.placeholder = translations[lang][key];
-                }
-            });
-            }
+    // Inicializar partículas
+    particlesJS('particles-js', lightParticles);
 
-            document.getElementById("languageSelector").addEventListener("change", e => {
-            translatePage(e.target.value);
-            });
+    function actualizarIconoModo() {
+      if (oscuro) {
+        iconModo.classList.remove('fa-moon');
+        iconModo.classList.add('fa-sun');
+      } else {
+        iconModo.classList.remove('fa-sun');
+        iconModo.classList.add('fa-moon');
+      }
+    }
 
-            // Traduce al cargar
-            window.addEventListener("DOMContentLoaded", () => {
-            const lang = document.getElementById("languageSelector").value;
-            translatePage(lang);
-            });
-    </script>
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('oscuro');
+      oscuro = !oscuro;
+      setParticlesMode(oscuro);
+      actualizarIconoModo();
 
-    <script>
-  // Mostrar/ocultar menú de idiomas
-  document.getElementById('botonIdioma').addEventListener('click', function(e) {
-    e.stopPropagation(); // Evita que el click se propague
-    document.getElementById('listaIdiomas').classList.toggle('mostrar');
-  });
+      // Animación de giro
+      iconModo.classList.add('girando');
+      iconModo.addEventListener('animationend', () => {
+        iconModo.classList.remove('girando');
+      }, { once: true });
+    });
 
-  // Cerrar menú al hacer click fuera
-  document.addEventListener('click', function() {
-    document.getElementById('listaIdiomas').classList.remove('mostrar');
-  });
+    actualizarIconoModo();
+  </script>
 
-  // Manejar selección de idioma
-  document.querySelectorAll('#listaIdiomas li').forEach(item => {
-    item.addEventListener('click', function() {
-      const lang = this.getAttribute('data-lang');
-      translatePage(lang);
+  <!-- Script: Sistema de traducciones -->
+  <script>
+    // ========================================
+    // SISTEMA DE TRADUCCIONES
+    // ========================================
+    const translations = {
+      es: {
+        title: "Portfolio",
+        greeting: "¡Hola, soy Santiago Lozano!",
+        welcome: "Bienvenido a mi portafolio",
+        nav_about: "Sobre mí",
+        nav_skills: "Habilidades",
+        nav_projects: "Proyectos",
+        nav_contact: "Contacto",
+        language_button: "🌐 Idioma",
+        about_title: "Sobre mí",
+        about_desc: "¡Hola! Soy un desarrollador apasionado por la tecnología y la creación de soluciones innovadoras. Me encanta aprender y compartir lo que sé.",
+        download_cv: "Descargar CV",
+        skills_title: "Habilidades Técnicas",
+        python_hours: "+250 horas",
+        skills_cpp_hours: "+80 horas",
+        skills_csharp_hours: "+110 horas",
+        skills_html_hours: "+15 horas",
+        projects_title: "Proyectos",
+        project_earthquake_map: "Mapa de Terremotos",
+        project_earthquake_desc: "Visualización interactiva de datos sísmicos usando mapas.",
+        project_github_stats: "Estadísticas de GitHub",
+        project_github_desc: "Página que muestra gráficos sobre usuarios, repositorios y licencias.",
+        project_pvz: "Plantas contra Zombies en Python",
+        project_pvz_desc: "Un proyecto inspirado en el famoso juego PvZ, desarrollado desde cero en Python.",
+        view_github: "Ver en GitHub",
+        contact_title: "Contacto",
+        contact_email_label: "Tu correo:",
+        contact_message_label: "Mensaje:",
+        contact_send: "Enviar",
+        contact_linkedin: "LinkedIn",
+        contact_github: "GitHub",
+        contact_email: "Email",
+        footer_text: "© 2025 Mi Portfolio"
+      },
+      en: {
+        title: "Portfolio",
+        greeting: "Hi, I'm Santiago Lozano!",
+        welcome: "Welcome to my portfolio",
+        nav_about: "About Me",
+        nav_skills: "Skills",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        language_button: "🌐 Language",
+        about_title: "About Me",
+        about_desc: "Hi! I'm a developer passionate about technology and creating innovative solutions. I love to learn and share what I know.",
+        download_cv: "Download CV",
+        skills_title: "Technical Skills",
+        python_hours: "+250 hours",
+        skills_cpp_hours: "+80 hours",
+        skills_csharp_hours: "+110 hours",
+        skills_html_hours: "+15 hours",
+        projects_title: "Projects",
+        project_earthquake_map: "Earthquake Map",
+        project_earthquake_desc: "Interactive visualization of seismic data using maps.",
+        project_github_stats: "GitHub Statistics",
+        project_github_desc: "Page displaying charts about users, repositories, and licenses.",
+        project_pvz: "Plants vs Zombies in Python",
+        project_pvz_desc: "A project inspired by the famous PvZ game, developed from scratch in Python.",
+        view_github: "View on GitHub",
+        contact_title: "Contact",
+        contact_email_label: "Your email:",
+        contact_message_label: "Message:",
+        contact_send: "Send",
+        contact_linkedin: "LinkedIn",
+        contact_github: "GitHub",
+        contact_email: "Email",
+        footer_text: "© 2025 My Portfolio"
+      },
+      zh: {
+        title: "作品集",
+        greeting: "你好，我是 Santiago Lozano!",
+        welcome: "欢迎来到我的作品集",
+        nav_about: "关于我",
+        nav_skills: "技能",
+        nav_projects: "项目",
+        nav_contact: "联系",
+        language_button: "🌐 语言",
+        about_title: "关于我",
+        about_desc: "你好！我是一个热爱技术并致力于创造创新解决方案的开发者。我喜欢学习并分享我的知识。",
+        download_cv: "下载简历",
+        skills_title: "技术技能",
+        python_hours: "+250 小时",
+        skills_cpp_hours: "+80 小时",
+        skills_csharp_hours: "+110 小时",
+        skills_html_hours: "+15 小时",
+        projects_title: "项目",
+        project_earthquake_map: "地震地图",
+        project_earthquake_desc: "使用地图交互式可视化地震数据。",
+        project_github_stats: "GitHub 统计",
+        project_github_desc: "显示用户、仓库和许可证图表的页面。",
+        project_pvz: "Python 版植物大战僵尸",
+        project_pvz_desc: "一个受 PvZ 启发的项目，用 Python 从零开发。",
+        view_github: "查看 GitHub",
+        contact_title: "联系",
+        contact_email_label: "你的邮箱:",
+        contact_message_label: "留言:",
+        contact_send: "发送",
+        contact_linkedin: "领英",
+        contact_github: "GitHub",
+        contact_email: "电子邮件",
+        footer_text: "© 2025 我的作品集"
+      }
+    };
+
+    // Función para traducir la página
+    function translatePage(lang) {
+      const elements = document.querySelectorAll("[data-i18n]");
+      elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Event listeners para el selector de idioma
+    document.getElementById('botonIdioma').addEventListener('click', function(e) {
+      e.stopPropagation();
+      document.getElementById('listaIdiomas').classList.toggle('mostrar');
+    });
+
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', function() {
       document.getElementById('listaIdiomas').classList.remove('mostrar');
     });
-  });
 
-  // Corregir el selector en el evento de cambio
-  document.getElementById('botonIdioma').addEventListener('click', function() {
-    const lang = this.getAttribute('data-lang');
-    if (lang) {
-      translatePage(lang);
+    // Manejar selección de idioma
+    document.querySelectorAll('#listaIdiomas li').forEach(item => {
+      item.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        translatePage(lang);
+        document.getElementById('listaIdiomas').classList.remove('mostrar');
+      });
+    });
+  </script>
+
+  <!-- Script: Asistente Virtual -->
+  <script>
+    // ========================================
+    // ASISTENTE VIRTUAL
+    // ========================================
+    const respuestas = {
+      'hola': '¡Hola! Soy el asistente virtual de Santiago Lozano. ¿En qué puedo ayudarte?',
+      'quién eres': 'Soy una IA diseñada para ayudarte a conocer mejor el portafolio de Santiago.',
+      'habilidades': 'Santiago domina Python, C++, C#, y HTML.',
+      'proyectos': 'Puedes ver los proyectos en la sección correspondiente: Mapa de Terremotos, GitHub Stats y PvZ en Python.',
+      'cv': 'Puedes descargar el CV desde la sección "Sobre mí".',
+      'contacto': 'Puedes contactarlo vía LinkedIn, GitHub o email, en la sección de contacto.'
+    };
+
+    // Elementos del DOM
+    const toggleAIButton = document.getElementById('toggle-ai-chat');
+    const chatContainer = document.getElementById('ai-chat');
+    const closeBtn = document.getElementById('close-ai-chat');
+    const messages = document.getElementById('ai-messages');
+    const input = document.getElementById('ai-input');
+    const sendBtn = document.getElementById('ai-send');
+
+    // Event listeners
+    toggleAIButton.addEventListener('click', () => {
+      chatContainer.classList.toggle('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      chatContainer.classList.remove('show');
+    });
+
+    sendBtn.addEventListener('click', enviarMensaje);
+    
+    input.addEventListener('keypress', e => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        enviarMensaje();
+      }
+    });
+
+    // Funciones del chat
+    function enviarMensaje() {
+      const texto = input.value.trim();
+      if (!texto) return;
+      
+      mostrarMensaje(texto, 'user');
+      input.value = '';
+      responder(texto.toLowerCase());
     }
-  });
 
-  // Asegurar que la función translatePage esté disponible globalmente
-  window.translatePage = function(lang) {
-    const elements = document.querySelectorAll("[data-i18n]");
-    elements.forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
+    function mostrarMensaje(texto, tipo) {
+      const msg = document.createElement('div');
+      msg.className = `ai-message ${tipo}`;
+      
+      const content = document.createElement('div');
+      content.className = 'message-content';
+      content.textContent = texto;
+      
+      msg.appendChild(content);
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function responder(pregunta) {
+      let respuesta = 'Lo siento, no tengo información sobre eso.';
+      
+      for (let clave in respuestas) {
+        if (pregunta.includes(clave)) {
+          respuesta = respuestas[clave];
+          break;
+        }
       }
-    });
-
-    const placeholders = document.querySelectorAll("[data-i18n-placeholder]");
-    placeholders.forEach(el => {
-      const key = el.getAttribute("data-i18n-placeholder");
-      if (translations[lang] && translations[lang][key]) {
-        el.placeholder = translations[lang][key];
-      }
-    });
-  };
-</script>
-
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+      
+      setTimeout(() => mostrarMensaje(respuesta, 'bot'), 500);
+    }
+  </script>
 </body>
 </html>
