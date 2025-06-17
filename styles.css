@@ -18,7 +18,7 @@
   --accent-color: #0077cc;
   --accent-hover: #005fa3;
   
-  /* Colores de éxito */
+  /* Colores de exito */
   --success-color: #28a745;
   --success-hover: #218838;
   
@@ -60,7 +60,7 @@ body.oscuro {
 }
 
 /* ========================================
-   TIPOGRAFÍA
+   TIPOGRAFiA
    ======================================== */
 h1, h2, h3 {
   margin-top: 0;
@@ -135,7 +135,7 @@ p {
 }
 
 /* ========================================
-   NAVEGACIÓN
+   NAVEGACIoN
    ======================================== */
 .navbar {
   position: fixed;
@@ -283,7 +283,7 @@ body.oscuro .portada {
 }
 
 /* ========================================
-   SECCIÓN SOBRE MÍ
+   SECCIoN SOBRE Mi
    ======================================== */
 .boton-descarga {
   display: inline-block;
@@ -302,7 +302,7 @@ body.oscuro .portada {
 }
 
 /* ========================================
-   SECCIÓN HABILIDADES
+   SECCIoN HABILIDADES
    ======================================== */
 .habilidades {
   padding: 3rem 1rem;
@@ -368,7 +368,7 @@ body.oscuro .habilidad {
 }
 
 /* ========================================
-   SECCIÓN PROYECTOS
+   SECCIoN PROYECTOS
    ======================================== */
 .proyectos-grid {
   display: grid;
@@ -489,7 +489,7 @@ form button[type="submit"]:hover {
 }
 
 /* ========================================
-   SECCIÓN CONTACTO - REDES SOCIALES
+   SECCIoN CONTACTO - REDES SOCIALES
    ======================================== */
 .redes {
   list-style: none;
@@ -888,7 +888,7 @@ body.oscuro footer {
   }
 }
 
-/* Móviles */
+/* Moviles */
 @media (max-width: 480px) {
   .seccion {
     padding: 70px 10px 30px;
@@ -962,7 +962,7 @@ body.oscuro footer {
     font-size: 0.8rem;
   }
   
-  /* Chatbot en móviles */
+  /* Chatbot en moviles */
   .ai-assistant {
     bottom: 15px;
     right: 15px;
@@ -1055,7 +1055,7 @@ body.oscuro footer {
   }
 }
 
-/* Móviles muy pequeños */
+/* Moviles muy pequeños */
 @media (max-width: 360px) {
   .nav-links {
     flex-wrap: wrap;
@@ -1081,7 +1081,7 @@ body.oscuro footer {
     font-size: 0.9rem;
   }
   
-  /* Chatbot en móviles muy pequeños */
+  /* Chatbot en moviles muy pequeños */
   .ai-assistant {
     bottom: 10px;
     right: 10px;
@@ -1161,7 +1161,7 @@ body.oscuro footer {
   }
 }
 
-/* Orientación landscape en móviles */
+/* Orientacion landscape en moviles */
 @media (max-width: 768px) and (orientation: landscape) {
   .ai-chat-container {
     height: calc(100vh - 80px);
@@ -1182,7 +1182,7 @@ body.oscuro footer {
   }
 }
 
-/* Mejoras para accesibilidad en pantallas táctiles */
+/* Mejoras para accesibilidad en pantallas tactiles */
 @media (pointer: coarse) {
   .ai-toggle-btn {
     min-width: 48px;
